@@ -35,7 +35,6 @@ public class QuartzManager {
             CronTrigger trigger = TriggerBuilder.newTrigger().withIdentity(jobName, TRIGGER_GROUP_NAME)
                     .withSchedule(CronScheduleBuilder.cronSchedule(time)).build();
           /*  trigger.setCronExpression(time);// 触发器时间设定*/
-
             sched.scheduleJob(jobDetail, trigger);
             // 启动
             if (!sched.isShutdown()) {
